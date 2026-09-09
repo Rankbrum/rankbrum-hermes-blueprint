@@ -1,0 +1,129 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# MCP token files (protected by Hermes)
+mcp-tokens/
+!mcp-tokens/.gitkeep
+
+# Hermes specific sensitive files
+auth.json
+*.key
+*.pem
+*.pfx
+credentials
+tokens
+API keys
+cookies
+
+# Logs (may contain sensitive information)
+logs/
+!logs/.gitkeep
+
+# Cache directories (may contain temporary sensitive data)
+cache/
+!cache/.gitkeep
+
+# Sessions (contain request dumps with potentially sensitive data)
+sessions/
+!sessions/.gitkeep
+
+# State databases (may contain sensitive information)
+state/
+!state/.gitkeep
+
+# Memories (contain user data and conversations)
+memories/
+!memories/.gitkeep
+
+# Config file (contains references to secrets but not the secrets themselves)
+# Note: We track config.yaml.example but not the actual config.yaml
+config.yaml
+!config.yaml.example
+
+# Temporary and runtime files
+*.tmp
+*.temp
+._*
+.DS_Store
+Thumbs.db
+
+# Build artifacts and distributions
+dist/
+build/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments and package directories
+venv/
+ENV/
+env/
+pip-wheel-mcache/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.cache
+.hypothesis
+.pytest_cache/
+__pycache__
+*.py[cod]
+*$py.class
+
+# Node.js and frontend dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Hermes specific directories that should not be copied
+# (these are generated/runtime specific)
+hermes-setup.exe
+hermes.exe
+hermes-acp.exe
+browser-use.exe
+uv.exe
+uvw.exe
+uvx.exe
+
+# Documentation build outputs
+_site/
+docs/_build/
+
+# Test artifacts
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis
+.pytest_cache/
+
+# Temporary verification scripts output
+verification_output/
+test_results/
+
+# Lock files that might be environment-specific
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+poetry.lock
+Pipfile.lock
+
+# Environment files for various tools
+*.env
+*.env.*
+!*.env.example

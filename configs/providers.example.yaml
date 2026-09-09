@@ -1,0 +1,53 @@
+# Provider Configuration for RankBrum Hermes
+# Copy to config.yaml and replace placeholder values with actual keys
+
+model:
+  # Primary model - NVIDIA Nemotron Ultra 550B
+  default: nvidia/nemotron-3-ultra-550b-a55b
+  provider: nvidia
+  base_url: https://integrate.api.nvidia.com/v1
+  
+  # API Key for NVIDIA (should be in .env, not here)
+  # api_key: ${NVIDIA_API_KEY}
+
+# Fallback Provider Chain
+fallback_providers:
+  # OpenRouter - Minimax M3 (Free)
+  - provider: openrouter
+    model: minimax/minimax-m3:free
+    # base_url: https://openrouter.ai/api/v1
+    # api_key: ${OPENROUTER_API_KEY}
+  
+  # OpenRouter - NVIDIA Nemotron Super 120B (Free)
+  - provider: openrouter
+    model: nvidia/nemotron-3-super-120b-a12b:free
+    # base_url: https://openrouter.ai/api/v1
+    # api_key: ${OPENROUTER_API_KEY}
+  
+  # Minimax Direct
+  - provider: minimax
+    model: MiniMax-M2.7
+    # api_key: ${MINIMAX_API_KEY}
+  
+  # Alibaba Cloud
+  - provider: alibaba
+    model: qwen3-coder-flash
+    # api_key: ${ALIBABA_API_KEY}
+  
+  # NVIDIA Direct (Alternative)
+  - provider: nvidia
+    model: nvidia/nemotron-3-ultra-550b-a55b
+    # base_url: https://integrate.api.nvidia.com/v1
+    # api_key: ${NVIDIA_API_KEY}
+  
+  # OpenRouter - NVIDIA Nemotron Ultra 550B (Free)
+  - provider: openrouter
+    model: nvidia/nemotron-3-ultra-550b-a55b:free
+    # base_url: https://openrouter.ai/api/v1
+    # api_key: ${OPENROUTER_API_KEY}
+  
+  # OpenCode Free
+  - provider: opencode-free
+    model: nemotron-3.5-lightning-free
+    # base_url: https://api.opencode.com/v1
+    # api_key: ${OPENCODE_API_KEY}
